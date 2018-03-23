@@ -20,4 +20,7 @@ For developers (only):
 (Don't use: pip install -U wxPython, because it will install a higer version
 4.0 but not Unicode compatible!) (to uninstall: pip uninstall wxPython
 - Install NSIS (nsis-3.03-setup.exe)
-- All the three installers are attached 
+- All the four installers are attached
+
+- Run make.bat, which will create two folders: ./build/ and ./dist/
+- SmallEditor.nsi is the script for creating the installer (right click the file and Compile NSIS Script)
