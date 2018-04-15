@@ -1,4 +1,4 @@
-;NSIS Script For SmallEditor
+;NSIS Script For easyMemo
 
 ;Background Colors
 ;BGGradient 0000FF 000000 FFFFFF
@@ -8,7 +8,7 @@
 ;CRCCheck On
 ;
 ; HM NIS Edit Wizard helper defines
-!define PRODUCT_NAME "SmallEditor"
+!define PRODUCT_NAME "easyMemo"
 !define PRODUCT_VERSION "1.2"
 !define PRODUCT_PUBLISHER "Priva b.v."
 !define PRODUCT_WEB_SITE "http://www.priva.nl"
@@ -24,10 +24,10 @@
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\modern-install.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 ;Output File Name
-OutFile "SmallEditorSetup.exe"
+OutFile "easyMemoSetup.exe"
 
 ;The Default Installation Directory
-InstallDir "C:\SmallEditor"
+InstallDir "C:\easyMemo"
 
 ;The text to prompt the user to enter a directory
 DirText "Please select the folder below"
@@ -40,7 +40,7 @@ DirText "Please select the folder below"
 ; Instfiles page
 !insertmacro MUI_PAGE_INSTFILES
 ; Finish page
-!define MUI_FINISHPAGE_RUN "$INSTDIR\SmallEditor.exe"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\easyMemo.exe"
 !define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\readme.txt"
 !insertmacro MUI_PAGE_FINISH
 
@@ -64,7 +64,7 @@ Section "Install"
   SetCompress Auto
   SetOverwrite IfNewer
   File ".\dist\Diary.exe"
-  File ".\dist\SmallEditor.exe"
+  File ".\dist\easyMemo.exe"
   File ".\dist\w9xpopen.exe"
   File ".\dist\_hashlib.pyd"
   File ".\dist\bz2.pyd"
@@ -82,29 +82,29 @@ Section "Install"
   File ".\dist\wxmsw28uh_adv_vc.dll"
   File ".\dist\wxmsw28uh_core_vc.dll"
   File ".\dist\wxmsw28uh_html_vc.dll"
-  File ".\dist\SmallEditor.ico"
+  File ".\dist\easyMemo.ico"
   File ".\dist\library.zip"
   File ".\readme.txt"
   File ".\diary.txt"
 
   ; Write the uninstall keys for Windows
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\SmallEditor" "DisplayName" "SmallEditor"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\SmallEditor" "UninstallString" "$INSTDIR\Uninst.exe"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\easyMemo" "DisplayName" "easyMemo"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\easyMemo" "UninstallString" "$INSTDIR\Uninst.exe"
 WriteUninstaller "Uninst.exe"
 SectionEnd
 
 Section "Shortcuts"
   ;Add Shortcuts
-  CreateDirectory "$SMPROGRAMS\SmallEditor"
-  CreateShortCut "$SMPROGRAMS\SmallEditor\SmallEditor.lnk" "$INSTDIR\SmallEditor.exe" "" "$INSTDIR\SmallEditor.exe" 0
-  CreateShortCut "$DESKTOP\SmallEditor.lnk" "$INSTDIR\SmallEditor.exe"
+  CreateDirectory "$SMPROGRAMS\easyMemo"
+  CreateShortCut "$SMPROGRAMS\easyMemo\easyMemo.lnk" "$INSTDIR\easyMemo.exe" "" "$INSTDIR\easyMemo.exe" 0
+  CreateShortCut "$DESKTOP\easyMemo.lnk" "$INSTDIR\easyMemo.exe"
 SectionEnd
 
-UninstallText "This will uninstall SmallEditor from your system"
+UninstallText "This will uninstall easyMemo from your system"
 
 Section Uninstall
   ;Delete Files
-  Delete "$INSTDIR\SmallEditor.exe"
+  Delete "$INSTDIR\easyMemo.exe"
   Delete "$INSTDIR\Diary.exe"
   Delete "$INSTDIR\w9xpopen.exe"
   Delete "$INSTDIR\_hashlib.pyd"
@@ -118,25 +118,24 @@ Section Uninstall
   Delete "$INSTDIR\wx._windows_.pyd"
   Delete "$INSTDIR\msvcp90.dll"
   Delete "$INSTDIR\python27.dll"
-  Delete "$INSTDIR\wxbase30u_vc90.dll"
-  Delete "$INSTDIR\wxbase30u_net_vc90.dll"
-  Delete "$INSTDIR\wxmsw30u_core_vc90.dll"
-  Delete "$INSTDIR\wxmsw30u_adv_vc90.dll"
-  Delete "$INSTDIR\wxmsw30u_html_vc90.dll"
-  Delete "$INSTDIR\SmallEditor.ico"
+  Delete "$INSTDIR\wxbase28uh_net_vc.dll"
+  Delete "$INSTDIR\wxbase28uh_vc.dll"
+  Delete "$INSTDIR\wxmsw28uh_adv_vc.dll"
+  Delete "$INSTDIR\wxmsw28uh_core_vc.dll"
+  Delete "$INSTDIR\wxmsw28uh_html_vc.dll"
+  Delete "$INSTDIR\easyMemo.ico"
   Delete "$INSTDIR\library.zip"
   Delete "$INSTDIR\readme.txt"
   Delete "$INSTDIR\diary.txt"
-  Delete "$DESKTOP\SmallEditor.lnk"
+  Delete "$DESKTOP\easyMemo.lnk"
 
   ;Delete Start Menu Shortcuts
-  Delete "$SMPROGRAMS\SmallEditor\*.*"
-  RmDir "$SMPROGRAMS\SmallEditor"
+  Delete "$SMPROGRAMS\easyMemo\*.*"
+  RmDir "$SMPROGRAMS\easyMemo"
 
   ;Delete Uninstaller And Unistall Registry Entries
   Delete "$INSTDIR\Uninst.exe"
-  DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\SmallEditor"
-  DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\SmallEditor"
+  DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\easyMemo"
+  DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\easyMemo"
   RMDir "$INSTDIR"
 SectionEnd
-
