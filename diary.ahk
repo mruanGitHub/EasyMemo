@@ -17,11 +17,11 @@ Loop
    else if myVar <> 
    {
       fileappend, %current% - %text%`n, %A_WorkingDir%\diary.txt
-      Process, Exist, SmallEditor.exe ; check to see if program is running
+      Process, Exist, easyMemo.exe ; check to see if program is running
       If (ErrorLevel > 0) ; If program is not running -> Run
       {
   	 Process, Close, %ErrorLevel%
-         Run, SmallEditor.exe diary.txt
+         Run, easyMemo.exe diary.txt
       }
    }
 }
@@ -43,11 +43,11 @@ Loop
    else if myVar <> 
    {
       fileappend, %current% - %text%`n, %A_WorkingDir%\diary.txt
-      Process, Exist, SmallEditor.exe ; check to see if program is running
+      Process, Exist, easyMemo.exe ; check to see if program is running
       If (ErrorLevel > 0) ; If program is not running -> Run
       {
   	 Process, Close, %ErrorLevel%
-         Run, SmallEditor.exe diary.txt
+         Run, easyMemo.exe diary.txt
       }
    }
 }
@@ -58,10 +58,10 @@ return
 IfNotExist, diary.txt
    FileAppend,,diary.txt
 
-;StartClose("SmallEditor.exe diary.txt")
-StartClose("SmallEditor.exe")
+;StartClose("easyMemo.exe diary.txt")
+StartClose("easyMemo.exe")
 
-;Run, SmallEditor diary.txt
+;Run, easyMemo diary.txt
 
 return
 
