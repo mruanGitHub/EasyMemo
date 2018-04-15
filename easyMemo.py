@@ -1,5 +1,5 @@
 """
-SmallEditor (Unicode compatible!): Use wxPython/AHK, Py2exe and NSIS
+easyMemo (Unicode compatible!): Use wxPython/AHK, Py2exe and NSIS
 A Small test wxPython program along with py2Exe scripts to build a windows executable
 (Ming, originally on 05 March 2010; imporved in 2012)
 To do's:
@@ -36,7 +36,7 @@ chi_uni = (u'Python \u662f\u6700\u597d\u7684\u7de8\u7a0b\u8a9e\u8a00\uff01',
 True=1
 False=0
 
-APP_NAME = "SmallEditor V1.2"
+APP_NAME = "easyMemo V1.2"
 
 # --- Menu and control ID's
 #ID_NEW=101
@@ -72,7 +72,7 @@ class smallAppFrame(wx.Frame):
         self.SetMinSize((640,480))
         # --- real windows programs have icons, so here's ours!
         try:# - don't sweat it if it doesn't load
-            self.SetIcon(wx.Icon("SmallEditor.ico", wx.BITMAP_TYPE_ICO))
+            self.SetIcon(wx.Icon("easyMemo.ico", wx.BITMAP_TYPE_ICO))
         finally:
             pass
 
@@ -214,10 +214,10 @@ class smallAppFrame(wx.Frame):
         
 # Help bar        
         helpMenu = wx.Menu()
-#        helpMenu.Append(ID_ABOUT, "&About SmallEditor", "Display information about the program")
+#        helpMenu.Append(ID_ABOUT, "&About easyMemo", "Display information about the program")
 #        wx.EVT_MENU(self, ID_ABOUT, self.OnHelpAbout)
 # the following does the same!
-        helpItem = helpMenu.Append(-1, '&About SmallEditor', 'wxPython RULES!!!')
+        helpItem = helpMenu.Append(-1, '&About easyMemo', 'wxPython RULES!!!')
         self.Bind(wx.EVT_MENU, self.OnHelpAbout, helpItem)
 
 # --- now add them to a menubar & attach it to the frame
