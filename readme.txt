@@ -1,4 +1,5 @@
-Today is 19-03-2018
+-- Today is 15-04-2022
+
 ----------------------------------------------------------------------------------
 This SmallEditor is developed using Python/wxPython/AutoHotKey, packed using NSIS
 For bugs or other issues please contact me: ming_ruan@yahoo.com
@@ -14,13 +15,16 @@ Usage:
 - Your texts will be automatically saved in the 'diary.txt'
 
 For developers (only):
+
 - Install python2.7 (python-2.7.14.msi)
-- Install py2exe (py2exe-0.6.9.win32-py2.7.exe)
-- Install wxPython Unicode! (wxPython2.8-win32-unicode-2.8.12.1-py27.exe)
-(Don't use: pip install -U wxPython, because it will install a higer version
-4.0 but not Unicode compatible!) (to uninstall: pip uninstall wxPython
+- Install py2exe (choose 32 or 64 bit)
+- Install wxPython Unicode! (choose 32 or 64 bit)
+
+(Don't use: pip install -U wxPython, because it will install a higer version 4.0 but not Unicode compatible!)
+(If necessary, to uninstall: pip uninstall wxPython)
+
 - Install NSIS (nsis-3.03-setup.exe)
-- All the four installers are attached
 
 - Run make.bat, which will create two folders: ./build/ and ./dist/
+
 - SmallEditor.nsi is the script for creating the installer (right click the file and Compile NSIS Script)
