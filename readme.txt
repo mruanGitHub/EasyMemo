@@ -1,11 +1,11 @@
--- Today is 15-04-2022
+-- 22-05-2022 --
 
-----------------------------------------------------------------------------------
 This SmallEditor is developed using Python/wxPython/AutoHotKey, packed using NSIS
 For bugs or other issues please contact me: ming_ruan@yahoo.com
 
-My LinkedIn profile:  http://nl.linkedin.com/pub/mingchuan-ruan/66/34a/16b
-----------------------------------------------------------------------------------
+My LinkedIn profile:  
+http://nl.linkedin.com/pub/mingchuan-ruan/66/34a/16b
+
 
 Usage:
 - Install SmallEditor in e.g. C:\SmallEditor\
@@ -16,9 +16,9 @@ Usage:
 
 For developers (only):
 
-- Install python2.7 (python-2.7.14.msi)
-- Install py2exe (choose 32 or 64 bit)
-- Install wxPython Unicode! (choose 32 or 64 bit)
+- Install python2.7 (python-2.7.14.msi)(if necessary set Python to the path for Environment variables
+- Install py2exe
+- Install wxPython Unicode
 
 (Don't use: pip install -U wxPython, because it will install a higer version 4.0 but not Unicode compatible!)
 (If necessary, to uninstall: pip uninstall wxPython)
